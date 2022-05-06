@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Feedback {
+  id String @id @default(uuid()) // O @id define que este campo é o identificador do modelo
+
+  type       String
+  comment    String
+  screenshot String? // O sinal de interrogação indica que o campo é opcional
+
+  @@map("feedbacks")
+}
