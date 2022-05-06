@@ -8,11 +8,11 @@ datasource db {
 }
 
 model Feedback {
-  id String @id @default(uuid()) // O @id define que este campo é o identificador do modelo
+  id String @id @default(uuid()) // The id of the feedback
 
-  type       String
-  comment    String
-  screenshot String? // O sinal de interrogação indica que o campo é opcional
+  type       String // The type
+  comment    String // The comment
+  screenshot String? // The screenshot / The ? means that this field is optional
 
   @@map("feedbacks")
 }
